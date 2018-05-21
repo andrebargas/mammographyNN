@@ -47,3 +47,31 @@ class NeuralNetwork():
             self.synaptic_weights_1layer += adjustment_1layer
             self.synaptic_weights_2layer += adjustment_2layer
 
+    def  == "__main__":
+    neural_network = NeuralNetwork()
+
+
+    training_inputs = array([[0, 0, 0], [0, 1, 0], [1, 0, 0], [1, 1, 0]])
+    training_outputs = array([[0], [1], [1], [0]])
+
+    neural_network.train(training_inputs, training_outputs, 5)
+
+    print "Testando com entradas 00 ; 01 ; 10 ; 11 :"
+    print neural_network.think_all(training_inputs)
+
+class CallNN():
+        
+    neural_network = NeuralNetwork()
+
+    def trainNN(training_set_inputs, training_set_outputs,
+                number_of_training_interations):
+            
+            neural_network.train(training_inputs, training_outputs, number_of_training_interations)
+
+    def useNN(inputs)
+        result = neural_network.think_all(training_inputs)
+
+        if result > 0.5:
+            return True
+        else:
+            return False
