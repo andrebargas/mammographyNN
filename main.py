@@ -48,12 +48,29 @@ def read_folder():
     return(dataset)
 
 
-def main():
-    start = time.time()
-    dataset = read_folder()
-    end = time.time()
-    print(end - start)
+
+def read_result():
+    import numpy as np
+    filename = ('mdb.txt')
+    file = open(filename, "r")
+    # Reades the file
+    lines = file.readlines()
     result = []
+    pgmfile = []
+    # Read file line by line
+    for x in lines:
+
+        pgmfile.append(x.split(' ')[0])
+        result.append(x.split(' ')[1])
+    file.close()
+    result = np.array((result, pgmfile))
+    print(result)
+    return result
+
+
+def main():
+    result = read_result()
+    dataset = read_folder()
 
 
 if __name__ == '__main__':
